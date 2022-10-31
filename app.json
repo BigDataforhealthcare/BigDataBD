@@ -1,6 +1,18 @@
 {
   "expo": {
     "name": "bigdatabd",
+    "plugins": [
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "BigData needs access to your Camera.",
+  
+         
+          "enableMicrophonePermission": true,
+          "microphonePermissionText": "BigData needs access to your Microphone."
+        }
+      ]
+    ],
     "slug": "bigdatabd",
     "version": "1.0.0",
     "orientation": "portrait",
