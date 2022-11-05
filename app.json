@@ -6,10 +6,9 @@
         "react-native-vision-camera",
         {
           "cameraPermissionText": "BigData needs access to your Camera.",
-  
-         
           "enableMicrophonePermission": true,
           "microphonePermissionText": "BigData needs access to your Microphone."
+          
         }
       ]
     ],
@@ -30,16 +29,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "BigData needs access to your Camera.",
+        "NSMicrophoneUsageDescription": "BigData needs access to your Microphone."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "79e8117f-847e-4d13-9176-d637f48a1b24"
+      }
     }
   }
 }
