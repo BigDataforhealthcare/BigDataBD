@@ -8,7 +8,6 @@ export default function ImportData() {
  
   Camera.requestMicrophonePermissionsAsync();
   Camera.requestCameraPermissionsAsync();
-  
 
 
 
