@@ -20,6 +20,21 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
 
+  function checkFields(){
+    if(email == "" || password == ""){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+  function goToMain(){
+    console.log(email + password);
+    if(checkFields() == true){
+      navigation.navigate("Mainscreen");
+    }
+  }
+
  
   return (
     <View style={styles.container}>
@@ -51,7 +66,7 @@ export default function LoginPage() {
  
      
  
-      <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("Mainscreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={goToMain}>
         <Text style={styles.loginText}>
           Login</Text>
         
