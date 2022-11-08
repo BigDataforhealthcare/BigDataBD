@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from './Splashscreen';
 import LoginPage from './LoginPage';
+import CreateAccount from './CreateAccount';
 import Mainscreen from './Mainscreen';
 import ImportData  from './ImportData';
 
@@ -17,6 +18,7 @@ export default function App() {
 
       <Stack.Screen name="Splash Screen" component={SplashScreen}/>
       <Stack.Screen name = "Login Page" component={LoginPage}/>
+      <Stack.Screen name = "Create Account" component={CreateAccount}/>
       <Stack.Screen name = "Mainscreen"component={Mainscreen}/>
       <Stack.Screen name = "ImportData" component={ImportData}/>
       </Stack.Navigator>

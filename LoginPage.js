@@ -56,7 +56,7 @@ export default function LoginPage() {
           Login</Text>
         
       </TouchableOpacity>
-      <TouchableOpacity style={styles.createbtn}  onPress={()=> navigation.navigate("Create an Account Page")} >
+      <TouchableOpacity style={styles.createbtn}  onPress={()=> navigation.navigate("Create Account")} >
         <Text 
         style={styles.createtxt}
        
