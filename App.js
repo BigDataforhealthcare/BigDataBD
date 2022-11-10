@@ -7,7 +7,10 @@ import SplashScreen from './Splashscreen';
 import LoginPage from './LoginPage';
 import CreateAccount from './CreateAccount';
 import Mainscreen from './Mainscreen';
-import ImportData  from './ImportData';
+import ImportData from './ImportData';
+import ImportMainScreen from './ImportMainScreen';
+import UploadPhotos from './UploadPhotos';
+
 
 const Stack = createNativeStackNavigator()
 
@@ -21,6 +24,9 @@ export default function App() {
       <Stack.Screen name = "Create Account" component={CreateAccount}/>
       <Stack.Screen name = "Mainscreen"component={Mainscreen}/>
       <Stack.Screen name = "ImportData" component={ImportData}/>
+      <Stack.Screen name = "ImportMainScreen" component={ImportMainScreen}/>
+      <Stack.Screen name = "UploadPhoto" component={UploadPhotos}/>
+      
       </Stack.Navigator>
 
    </NavigationContainer>

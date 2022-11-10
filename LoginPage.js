@@ -66,7 +66,7 @@ export default function LoginPage() {
  
      
  
-      <TouchableOpacity style={styles.loginBtn} onPress={goToMain}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Mainscreen")}>
         <Text style={styles.loginText}>
           Login</Text>
         

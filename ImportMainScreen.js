@@ -16,7 +16,7 @@ import {
   TouchableOpacity,
 } from "react-native";
  
-export default function Mainscreen() {
+export default function ImportMainScreen() {
 
   
   const navigation = useNavigation();
@@ -29,26 +29,22 @@ export default function Mainscreen() {
  
       <StatusBar style="auto" />
 
-
+      
       
  
  
       <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}  onPress={()=> navigation.navigate("ImportMainScreen")}>Import Data</Text>
+        <Text style={styles.loginText}  onPress={()=> navigation.navigate("ImportData")}>Take Photo</Text>
         
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("Search Data")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("UploadPhoto")}>
         <Text style={styles.loginText}
         
-        
-        >Search Data</Text>
+        >Upload Photo</Text>
 
         
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>View Data</Text>
-        
-      </TouchableOpacity>
+
       
       
       
