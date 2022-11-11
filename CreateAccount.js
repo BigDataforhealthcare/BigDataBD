@@ -2,6 +2,7 @@ import React,{useRef} from 'react'
 import {Animated,Image, View} from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from "react-native";
+import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
 import {useNavigation} from "@react-navigation/native"
 import { StatusBar } from "expo-status-bar";
@@ -12,8 +13,36 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+
+
  
-export default function CreateAccpage() {
+export default function CreateAccount() {
+
+  function checkFields(){
+    if(email == "" || password == ""){
+      return false;
+    }
+    else{
+      storeUserData(password);
+      return true;
+    }
+  }
+
+  function goToMain(){
+    console.log(email + password);
+    if(checkFields() == true){
+      navigation.navigate("Mainscreen");
+    }
+  }
+
+  const storeUserData = async(value) => {
+    try{
+      jsonvalue = JSON.stringify(value);
+      await AsyncStorage.setItem('@'+email, value);
+    }catch(e){
+      console.log("failure");
+    }
+  }
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -57,7 +86,7 @@ export default function CreateAccpage() {
       </View>
  
  
-      <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("Mainscreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={goToMain()}>
         <Text style={styles.loginText}>Create</Text>
         
       </TouchableOpacity>

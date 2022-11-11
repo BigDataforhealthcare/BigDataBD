@@ -3,6 +3,7 @@ import {Animated,Image, View} from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button } from "react-native";
+import { AsyncStorage } from "react-native";
 
 import {useNavigation} from "@react-navigation/native"
 import { StatusBar } from "expo-status-bar";
@@ -25,7 +26,12 @@ export default function LoginPage() {
       return false;
     }
     else{
-      return true;
+      if(AsyncStorage.getItem(email) == password){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
   }
   function goToMain(){
@@ -66,7 +72,7 @@ export default function LoginPage() {
  
      
  
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Mainscreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={goToMain()}>
         <Text style={styles.loginText}>
           Login</Text>
         
