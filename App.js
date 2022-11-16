@@ -12,6 +12,7 @@ import ImportMainScreen from './ImportMainScreen';
 import UploadPhotos from './UploadPhotos';
 
 
+
 const Stack = createNativeStackNavigator()
 
 export default function App() {
