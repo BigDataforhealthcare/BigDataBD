@@ -12,16 +12,17 @@ export default function ImportData() {
 
 
   function toggleCameraType() {
-    
+
     setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+    console.log('flip pressed');
   }
 
   return (
     <View style={styles.container} >
-      <Camera style={styles.view} >
+      <Camera style={styles.view} type={type} >
       </Camera>
-
       
+
       <TouchableOpacity style={styles.createbtn} onPress={toggleCameraType}>
         <Text>
           Flip</Text>
