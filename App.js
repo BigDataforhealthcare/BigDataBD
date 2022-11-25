@@ -13,6 +13,10 @@ import UploadPhotos from './UploadPhotos';
 const BGcolor = "#032130";
 
 
+global.Data_text = [];
+
+
+
 
 const Stack = createNativeStackNavigator()
 

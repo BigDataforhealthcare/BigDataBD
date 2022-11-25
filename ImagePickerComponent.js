@@ -1,6 +1,8 @@
 import * as ImagePicker from "expo-image-picker";
 import React, { useState, useEffect } from "react";
-import { Button, Image, View, Text } from "react-native";
+import { Button, Image, View, Text, Alert } from "react-native";
+import App from "./App";
+
 
 
 function ImagePickerComponent({ onSubmit }) {
@@ -17,6 +19,10 @@ function ImagePickerComponent({ onSubmit }) {
       setText("Loading..");
       const responseData = await onSubmit(result.base64);
       setText(responseData.text);
+      Data_text.push(responseData.text);
+      console.log(Data_text.length);
+      Alert.alert("Succesful","Text has been converted, Double Check for Errors");
+      
     }
   };
   return (
