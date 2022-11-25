@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
       backgroundColor: BGcolor,
       padding: 8,
       color:'#FFFFFF',
+      overflow:'scroll',
     },
     paragraph: {
       margin: 24,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
       height: 40,
       alignItems: "center",
       justifyContent: "center",
-      marginTop: -20,
+      marginTop: 0,
       backgroundColor: "#481196",
       marginLeft: 129,
     },

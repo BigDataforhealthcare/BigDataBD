@@ -10,6 +10,7 @@ import Mainscreen from './Mainscreen';
 import ImportData from './ImportData';
 import ImportMainScreen from './ImportMainScreen';
 import UploadPhotos from './UploadPhotos';
+const BGcolor = "#032130";
 
 
 
@@ -20,13 +21,81 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
 
-      <Stack.Screen name="Splash Screen" component={SplashScreen}/>
-      <Stack.Screen name = "Login Page" component={LoginPage}/>
-      <Stack.Screen name = "Create Account" component={CreateAccount}/>
-      <Stack.Screen name = "Mainscreen"component={Mainscreen}/>
-      <Stack.Screen name = "ImportData" component={ImportData}/>
-      <Stack.Screen name = "ImportMainScreen" component={ImportMainScreen}/>
-      <Stack.Screen name = "UploadPhoto" component={UploadPhotos}/>
+      <Stack.Screen name="Home Page" component={SplashScreen}
+      options={{
+        title:'Home Page',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: BGcolor,
+        }
+       
+      }}/>
+      <Stack.Screen name = "Login Page" component={LoginPage}
+      options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+        
+      }}/>
+      <Stack.Screen name = "Create Account" component={CreateAccount}
+      options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+      }}/>
+      <Stack.Screen name = "Mainscreen"component={Mainscreen} options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+      }}/>
+      <Stack.Screen name = "ImportData" component={ImportData} options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+      }}/>
+      <Stack.Screen name = "ImportMainScreen" component={ImportMainScreen} options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+      }}/>
+      <Stack.Screen name = "UploadPhoto" component={UploadPhotos} options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+      }}/>
+  
       
       </Stack.Navigator>
 

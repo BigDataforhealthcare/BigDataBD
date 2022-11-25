@@ -6,7 +6,7 @@ export default function ImportData() {
   const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = Camera.useCameraPermissions();
  
-  Camera.requestMicrophonePermissionsAsync();
+  
   Camera.requestCameraPermissionsAsync();
 
 
