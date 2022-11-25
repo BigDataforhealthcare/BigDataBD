@@ -16,7 +16,7 @@ function ImagePickerComponent({ onSubmit }) {
       setImage(result.uri);
       setText("Loading..");
       const responseData = await onSubmit(result.base64);
-      setText("Text Conversion Below:  \n" + responseData.text);
+      setText(responseData.text);
     }
   };
   return (
@@ -37,11 +37,14 @@ function ImagePickerComponent({ onSubmit }) {
      
             <Button title="Upload Image" style={{
             }} onPress={pickImage} />
-            <Text style = {{ 
+        
+            <Text numberOfLines={6} style = {{ 
         color:'#FFFFFF',
         fontSize: 13,
         alignContent:'center',
-        marginBottom: 5,
+    
+        
+        
         }}>{text}</Text>
     </View>
     

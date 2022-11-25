@@ -28,7 +28,7 @@ export default function UploadPhotos(){
 
           <TouchableOpacity style={styles.saveBtn} onPress={console.log("pressed")}>
           <Text style={styles.saveText}>
-          Save Text</Text>
+          Save </Text>
           </TouchableOpacity>
         </View>
 
