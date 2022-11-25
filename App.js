@@ -10,10 +10,12 @@ import Mainscreen from './Mainscreen';
 import ImportData from './ImportData';
 import ImportMainScreen from './ImportMainScreen';
 import UploadPhotos from './UploadPhotos';
+import ViewData from './ViewData';
 const BGcolor = "#032130";
 
 
 global.Data_text = [];
+
 
 
 
@@ -99,9 +101,21 @@ export default function App() {
         },
         headerTintColor: '#fff'
       }}/>
+       <Stack.Screen name = "ViewData" component={ViewData}
+       options={{
+        title: '',
+        headerStyle:{
+          backgroundColor:BGcolor,
+        },
+        headerTitleStyle:{
+          color: '#fff',
+        },
+        headerTintColor: '#fff'
+       }}/>
   
       
       </Stack.Navigator>
+     
 
    </NavigationContainer>
   );

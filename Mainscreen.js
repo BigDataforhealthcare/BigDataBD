@@ -46,7 +46,7 @@ export default function Mainscreen() {
         
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>View Data</Text>
+        <Text style={styles.loginText} onPress={()=> navigation.navigate("ViewData")}>View Data</Text>
         
       </TouchableOpacity>
       
