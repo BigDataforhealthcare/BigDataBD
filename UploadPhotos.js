@@ -25,11 +25,11 @@ export default function UploadPhotos(){
     return (
         <View style={styles.container}>
           <ImagePickerComponent onSubmit={callGoogleVisionAsync} />
+          <TouchableOpacity onPress={() => navigation.navigate("ViewData")} style={styles.uploading}>
+     <Text style={styles.uploadtext}> View Data</Text>
+     </TouchableOpacity>
 
-          <TouchableOpacity style={styles.saveBtn} onPress={console.log("pressed")}>
-          <Text style={styles.saveText}>
-          Save </Text>
-          </TouchableOpacity>
+          
         </View>
 
     );
@@ -65,5 +65,29 @@ const styles = StyleSheet.create({
     saveText: {
       color: '#FFFFFF',
       fontSize: 18,
-    }
+    },
+    uploading: {
+      marginTop: 5,
+      alignItems:'center',
+      justifyContent: 'center',
+      marginBottom: 20,
+      backgroundColor: "#481196",
+      borderRadius: 10,
+    },
+    uploadtext:{
+      color:'#FFFFFF',
+      fontSize: 20,
+      alignItems:'center',
+      padding: 2
+    
+  
+    },
+  
+    image: {
+      width:200,
+      height:200,
+      marginTop:0,
+      marginBottom: 0,
+      marginLeft:0,
+    },
   });

@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     color:'#032130',
     height: 50,
     flex: 1,
-    padding: 10,
-    marginLeft: -210,
+
+    
    
     
   },

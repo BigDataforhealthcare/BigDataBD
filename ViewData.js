@@ -28,7 +28,7 @@ export default function ViewData(){
     function next(){
         textdata = Data_text[Data_text.length + 1]
     }
-    textdata = Data_text[Data_text.length - counter];
+    textdata = Data_text[Data_text.length - 1];
     return (
         <View style={styles.container}>
             <Text style={styles.header}> Data </Text>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     },
     text:{
         color:'#FFFFFF',
-        fontSize:8,
+        fontSize:13,
         width: '150%',
         marginBottom:0,
     

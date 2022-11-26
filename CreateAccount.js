@@ -28,21 +28,9 @@ export default function CreateAccount() {
     }
   }
 
-  function goToMain(){
-    console.log(email + password);
-    if(checkFields() == true){
-      navigation.navigate("Mainscreen");
-    }
-  }
+ 
 
-  const storeUserData = async(value) => {
-    try{
-      jsonvalue = JSON.stringify(value);
-      await AsyncStorage.setItem('@'+email, value);
-    }catch(e){
-      console.log("failure");
-    }
-  }
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,6 +41,7 @@ export default function CreateAccount() {
     <View style={styles.container}>
  
       <StatusBar style="auto" />
+      <Image style={styles.image} source={require('./assets/ab_icon.png')}  />
       <View style={styles.inputView}>
         <TextInput
         
@@ -86,9 +75,14 @@ export default function CreateAccount() {
       </View>
  
  
-      <TouchableOpacity style={styles.loginBtn} onPress={goToMain()}>
-        <Text style={styles.loginText}>Create</Text>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Mainscreen")}>
+        <Text style={styles.loginText}>Create Account</Text>
         
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.signinbtn} onPress={()=> navigation.goBack()} >
+        <Text style={styles.signin}>
+          Sign in Instead
+        </Text>
       </TouchableOpacity>
       
 
@@ -114,10 +108,10 @@ const styles = StyleSheet.create({
  
   inputView: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 30,
+    borderRadius: 10,
     width: "80%",
     height: 45,
-    marginBottom: 20,
+    marginBottom: 15,
     marginRight:10,
  
     alignItems: "center",
@@ -127,9 +121,9 @@ const styles = StyleSheet.create({
   TextInput: {
     color:'#032130',
     height: 50,
-    flex: 1,
+   
     padding: 10,
-    marginLeft: 20,
+    marginLeft: 0,
     
   },
  
@@ -137,6 +131,21 @@ const styles = StyleSheet.create({
     color:'#FFFFFF',
     height: 30,
     marginBottom: 10,
+  },
+  signin:{
+    color:'#FFFFFF',
+    
+    fontSize: 15
+
+  },
+  signinbtn:{
+    backgroundColor: '#4CA3D3',
+    marginTop:15,
+    padding: 6,
+    paddingHorizontal: 20,
+    borderRadius: 30
+
+
   },
  
   loginBtn: {
