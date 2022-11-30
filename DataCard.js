@@ -19,7 +19,7 @@ class DataCard extends Component {
             <div>
                 <Card>
                 <Card.Content>
-                    <Title>Card 1</Title>
+                    <Title>File  {counter}</Title>
                         <Paragraph>{textdata}</Paragraph></Card.Content>
                 </Card>
             </div>

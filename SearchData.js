@@ -23,8 +23,8 @@ export default function SearchData(){
     
     return(
         <View>
-             <SearchBar placeholder="Search" onChangeText={onChangeSearch} value={searchresults} 
-        />
+             
+        
        
         </View>
        
