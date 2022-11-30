@@ -1,5 +1,5 @@
 import React,{useRef} from 'react'
-import {Animated,Image, View} from "react-native";
+import {Animated,Image, View,Alert} from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Button } from "react-native";
@@ -25,6 +25,10 @@ export default function LoginPage() {
   function checkFields(){
     if(email == "admin" && password == "password"){
       navigation.navigate("Mainscreen");
+    }
+    else{
+      Alert.alert("","Incorrect Username and Password");
+      
     }
   }
 

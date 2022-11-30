@@ -12,6 +12,7 @@ import ImportMainScreen from './ImportMainScreen';
 import UploadPhotos from './UploadPhotos';
 import ViewData from './ViewData';
 import SearchData from './SearchData';
+
 const BGcolor = "#032130";
 
 
@@ -125,7 +126,7 @@ export default function App() {
           headerTintColor: '#fff'
          }}
        />
-  
+     
       
       </Stack.Navigator>
      

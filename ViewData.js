@@ -27,6 +27,7 @@ global.counter = 0;
 export default function ViewData(){
     const navigation = useNavigation();
     const [textdata,settextdata] = React.useState('');
+   
 
     function viewData(){
 
@@ -40,7 +41,9 @@ export default function ViewData(){
     function previous(){
         global.counter -= 1;
         settextdata(Data_text[counter]);
+        console.log("It is working!" + global.counter);
     }
+    
     return (
 
         <View style={styles.container}>
@@ -51,7 +54,7 @@ export default function ViewData(){
                 <Card>
             
                     <Card.Content>
-                    <Title>Card 1</Title>
+                    <Title>File</Title>
                         <Paragraph>{textdata}</Paragraph></Card.Content>
                 </Card> 
             </ScrollView>
