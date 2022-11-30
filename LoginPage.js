@@ -14,8 +14,10 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import CreateAccount from './CreateAccount';
  
 export default function LoginPage() {
+  const {usernames,passwords} = require('./CreateAccount');
 
   
   const navigation = useNavigation();
@@ -23,12 +25,16 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   function checkFields(){
-    if(email == "admin" && password == "password"){
-      navigation.navigate("Mainscreen");
-    }
-    else{
-      Alert.alert("","Incorrect Username and Password");
-      
+    console.log(usernames);
+    for(let i = 0; i < usernames.length; i++){
+      console.log(usernames[i]);
+      if(email == usernames[i] && password == passwords[i]){
+        navigation.navigate("Mainscreen");
+      }
+      else{
+        Alert.alert("","Incorrect Username and Password");
+
+      }
     }
   }
 

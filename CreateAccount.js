@@ -14,9 +14,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-
+const usernames = [];
+const passwords = [];
  
 export default function CreateAccount() {
+
+  
 
   function checkFields(){
     if(email == "" || password == ""){
@@ -27,6 +30,13 @@ export default function CreateAccount() {
       return true;
     }
   }
+  function storeUserData(){
+      usernames[usernames.length] = email;
+      passwords[passwords.length] = password;
+      console.log(usernames);
+      navigation.navigate("Login Page");
+  }
+  module.exports = {usernames,passwords};
 
  
 
@@ -75,7 +85,7 @@ export default function CreateAccount() {
       </View>
  
  
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Mainscreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => checkFields()}>
         <Text style={styles.loginText}>Create Account</Text>
         
       </TouchableOpacity>
