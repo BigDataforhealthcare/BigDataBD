@@ -19,6 +19,14 @@ export default function LoginPage() {
 
   
   const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function checkFields(){
+    if(email == "admin" && password == "password"){
+      navigation.navigate("Mainscreen");
+    }
+  }
 
  
 
@@ -36,6 +44,7 @@ export default function LoginPage() {
           style={styles.TextInput}
           placeholder="Email"
           placeholderTextColor="#D3D3D3"
+          onChangeText={(email) => setEmail(email)}
          
         />
       </View>
@@ -47,13 +56,14 @@ export default function LoginPage() {
           placeholderTextColor="#D3D3D3"
           
           secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
           
         />
       </View>
  
      
  
-      <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("Mainscreen")}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => checkFields()}>
         <Text style={styles.loginText}>
           Login</Text>
         
