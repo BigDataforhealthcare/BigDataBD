@@ -11,6 +11,7 @@ import ImportData from './ImportData';
 import ImportMainScreen from './ImportMainScreen';
 import UploadPhotos from './UploadPhotos';
 import ViewData from './ViewData';
+import SearchData from './SearchData';
 const BGcolor = "#032130";
 
 
@@ -112,6 +113,18 @@ export default function App() {
         },
         headerTintColor: '#fff'
        }}/>
+       <Stack.Screen name = "SearchData" component={SearchData}
+        options={{
+          title: '',
+          headerStyle:{
+            backgroundColor:BGcolor,
+          },
+          headerTitleStyle:{
+            color: '#fff',
+          },
+          headerTintColor: '#fff'
+         }}
+       />
   
       
       </Stack.Navigator>

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { View, StyleSheet,ScrollView } from "react-native";
+import { View, StyleSheet,ScrollView,} from "react-native";
+import { Avatar,Card, Title, Paragraph } from 'react-native-paper';
 import Constants from "expo-constants";
 
 import ImagePickerComponent from "./ImagePickerComponent";
@@ -20,35 +21,56 @@ import { StatusBar } from "expo-status-bar";
 import App from "./App";
 const BGcolor = "#032130"
 const white = "#FFFFFF"
-global.textdata = "";
-global.counter = 2;
+
+global.counter = 0;
 
 export default function ViewData(){
     const navigation = useNavigation();
-    function next(){
-        textdata = Data_text[Data_text.length + 1]
+    const [textdata,settextdata] = React.useState('');
+
+    function viewData(){
+
     }
-    textdata = Data_text[Data_text.length - 1];
+    function next(){
+        global.counter += 1;
+        console.log("It is working!" + global.counter);
+        // settextdata(Data_text[counter]);
+        settextdata(Data_text[counter]);
+    }
+    function previous(){
+        global.counter -= 1;
+        settextdata(Data_text[counter]);
+    }
     return (
+
         <View style={styles.container}>
+            
             <Text style={styles.header}> Data </Text>
             <SafeAreaView style={styles.content}>
-            <ScrollView style={styles.scrollview}>  
-                <Text style = {styles.text}>{textdata}</Text>
+            <ScrollView style={styles.scrollview}>
+                <Card>
+            
+                    <Card.Content>
+                    <Title>Card 1</Title>
+                        <Paragraph>{textdata}</Paragraph></Card.Content>
+                </Card> 
             </ScrollView>
+            
+           
 
             </SafeAreaView>
+            <TouchableOpacity style={styles.createbtn} onPress={next}><Text style={styles.textcontent} > Next</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.createbtn} onPress={previous}><Text style={styles.textcontent}> Previous</Text></TouchableOpacity>
+            <Card>
+                
+            </Card>
             <View style={{flexDirection:'row',marginTop:20,marginLeft:130,marginTop:30}}>
                 <View>
-                <TouchableOpacity style={styles.buttonstyle}>
-                    <Text style={styles.btntext} onPress={() => textdata = Data_text[Data_text.length - 1]}>←</Text>
-                    </TouchableOpacity>
+               
               
                 </View>
-                <View>
-                <TouchableOpacity style={styles.buttonstyle}>
-                    <Text style ={styles.btntext}>→</Text>
-                    </TouchableOpacity>
+                <View>  
+              
                    
                 </View>
 
@@ -80,12 +102,16 @@ const styles = StyleSheet.create({
     
        
     },
+    textcontent:{
+        color: '#FFFFFF'
+    },
     scrollview:{
         marginHorizontal:50,
 
     },
     content:{
         marginTop: 10,
+        marginBottom: 60,
         height:200,
     },
     header:{
@@ -109,8 +135,23 @@ const styles = StyleSheet.create({
     },
     btntext:{
         color:white,
-        
 
-    }
+    },
+    createbtn: {
+        color:'#FFFFFF',
+        
+        width: "70%",
+        marginLeft: 50,
+        borderRadius: 100,
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 20,
+        backgroundColor: "#481196",
+        
+    
+        
+    
+      },
 
 })

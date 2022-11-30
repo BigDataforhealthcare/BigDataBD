@@ -23,7 +23,6 @@ function ImagePickerComponent({ onSubmit }) {
       Data_text.push(responseData.text);
       console.log(Data_text.length);
       Alert.alert("Succesful","Text has been converted and Saved");
-      
     }
   };
   return (
