@@ -27,7 +27,6 @@ export default function LoginPage() {
   function checkFields(){
     console.log(usernames);
     for(let i = 0; i < usernames.length; i++){
-      console.log(usernames[i]);
       if(email == usernames[i] && password == passwords[i]){
         navigation.navigate("Mainscreen");
       }

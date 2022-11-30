@@ -33,7 +33,6 @@ export default function CreateAccount() {
   function storeUserData(){
       usernames[usernames.length] = email;
       passwords[passwords.length] = password;
-      console.log(usernames);
       navigation.navigate("Login Page");
   }
   module.exports = {usernames,passwords};
