@@ -25,14 +25,15 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   function checkFields(){
-    console.log(usernames);
-    for(let i = 0; i < usernames.length; i++){
-      if(email == usernames[i] && password == passwords[i]){
-        navigation.navigate("Mainscreen");
-      }
-      else{
-        Alert.alert("","Incorrect Username and Password");
+    if(usernames != undefined){
+      for(let i = 0; i < usernames.length; i++){
+        if(email == usernames[i] && password == passwords[i]){
+          navigation.navigate("Mainscreen");
+        }
+        else{
+          Alert.alert("","Incorrect Username and Password");
 
+        }
       }
     }
   }
