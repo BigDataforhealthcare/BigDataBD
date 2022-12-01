@@ -22,7 +22,7 @@ import App from "./App";
 const BGcolor = "#032130"
 const white = "#FFFFFF"
 
-global.counter = 0;
+global.counter = 1;
 
 export default function ViewData(){
     const navigation = useNavigation();
@@ -33,15 +33,23 @@ export default function ViewData(){
 
     }
     function next(){
-        global.counter += 1;
-        console.log("It is working!" + global.counter);
-        // settextdata(Data_text[counter]);
-        settextdata(Data_text[counter]);
+        if ( global.counter >= 0 && global.counter < Data_text.length -1 ){
+            global.counter += 1;
+            
+            // settextdata(Data_text[counter]);
+            settextdata(Data_text[counter]);
+            console.log("NExt " + global.counter);
+        }
+       
     }
     function previous(){
-        global.counter -= 1;
-        settextdata(Data_text[counter]);
-        console.log("It is working!" + global.counter);
+        if (global.counter >= 1 ){
+            global.counter -= 1;
+            settextdata(Data_text[counter]);
+            console.log("It is working!" + global.counter);
+
+        }
+       
     }
     
     return (
@@ -54,7 +62,7 @@ export default function ViewData(){
                 <Card>
             
                     <Card.Content>
-                    <Title>File</Title>
+                    <Title>File {global.counter + 1 }</Title>
                         <Paragraph>{textdata}</Paragraph></Card.Content>
                 </Card> 
             </ScrollView>

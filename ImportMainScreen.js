@@ -33,10 +33,10 @@ export default function ImportMainScreen() {
       
  
  
-      <TouchableOpacity style={styles.loginBtn}>
+      {/*<TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}  onPress={()=> navigation.navigate("ImportData")}>Take Photo</Text>
         
-      </TouchableOpacity>
+  </TouchableOpacity>*/}
       <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("UploadPhoto")}>
         <Text style={styles.loginText}
         

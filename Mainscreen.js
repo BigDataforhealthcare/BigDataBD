@@ -37,13 +37,12 @@ export default function Mainscreen() {
         <Text style={styles.loginText}  onPress={()=> navigation.navigate("ImportMainScreen")}>Import Data</Text>
         
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn} onPress={()=> navigation.navigate("SearchData")}>
+      {/*<TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("SearchData")}>
         <Text style={styles.loginText}>Search Data</Text>
 
-        
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText} onPress={()=> navigation.navigate("ViewData")}>View Data</Text>
+  </TouchableOpacity>*/}
+      <TouchableOpacity style={styles.loginBtn} onPress={navigation.navigate("ViewData")}>
+        <Text style={styles.loginText} onPress>View Data</Text>
         
       </TouchableOpacity>
       
